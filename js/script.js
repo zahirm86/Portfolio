@@ -121,30 +121,59 @@ function scrollActive() {
 
 window.addEventListener("scroll", scrollActive);
 
-// //emailjs for contact section
-// function sendMail(event) {
-//   event.preventDefault(); // Prevent default form submission behavior
-//   (function () {
-//     emailjs.init("Z7FQTWPQhRhYU18qG"); // Initialize EmailJS with your public key
-//   })();
+//emailjs for contact section
+function sendMail(event) {
+  event.preventDefault(); // Prevent default form submission
 
-//   const serviceID = "service_u6lrovt"; // Email service ID
-//   const templateID = "template_ux39osw"; // Email template ID
+  // Initialize EmailJS
+  emailjs.init("RzhEy4LZAzvAY2sfU"); // Your EmailJS public key
 
-//   emailjs.sendForm(serviceID, templateID, "#contact-form").then(
-//     function (response) {
-//       console.log("SUCCESS!", response.status, response.text);
-//       alert("Form Submitted Successfully");
-//       // Optionally, reset the form
-//       document.getElementById("contact-form").reset();
-//     },
-//     function (error) {
-//       console.log("FAILED...", error);
-//       alert("Form Submission Failed! Try Again");
-//     }
-//   );
-// }
+  const serviceID = "service_tipzu5e"; // Your EmailJS service ID
+  const templateID = "template_tvyqv98"; // Your EmailJS template ID
 
+  // Send the form data
+  emailjs.sendForm(serviceID, templateID, "#contact-form").then(
+    function (response) {
+      console.log("SUCCESS!", response.status, response.text);
+      alert("Form Submitted Successfully");
+      document.getElementById("contact-form").reset(); // Clear form after submission
+    },
+    function (error) {
+      console.log("FAILED...", error);
+      alert("Form Submission Failed! Try Again");
+    }
+  );
+}
+
+/*
+function sendMail(event) {
+  event.preventDefault(); // Prevent default form submission behavior
+
+  // Initialize EmailJS with your public key
+  emailjs.init("RzhEy4LZAzvAY2sfU");
+
+  // Email service and template IDs
+  const serviceID = "service_tipzu5e";
+  const templateID = "service_tipzu5e";
+
+  // Collect the form data and pass it to EmailJS
+  const form = document.getElementById("contact-form");
+  
+  emailjs.sendForm(serviceID, templateID, form).then(
+    function (response) {
+      console.log("SUCCESS!", response.status, response.text);
+      alert("Form Submitted Successfully");
+      // Reset the form after successful submission
+      form.reset();
+    },
+    function (error) {
+      console.log("FAILED...", error);
+      alert("Form Submission Failed! Try Again");
+    }
+  );
+}
+
+*/
 /* ----- TYPING EFFECT ----- */
 var typingEffect = new Typed(".typedText", {
   strings: ["Web Developer", "Programmer"],
