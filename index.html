@@ -26,6 +26,15 @@
 
   <!-- --------- FAVICON ---------- -->
   <link rel="shortcut icon" href="#" type="image/x-icon" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+  </script>
+  <script type="text/javascript">
+    (function () {
+      emailjs.init({
+        publicKey: "RzhEy4LZAzvAY2sfU",
+      });
+    })();
+  </script>
 
   <title>Zahir Mulla | Portfolio</title>
 </head>
@@ -346,33 +355,15 @@
           </div>
 
           <div class="outerbox">
-            <form
-              class="formspace"
-              id="contact-form"
-              onsubmit="sendMail(event)"
-              class="form-control"
-            >
+            <form class="formspace" id="contact-form" onsubmit="sendMail(event)">
               <div class="inputsspace">
-                <input
-                  type="text"
-                  class="inputspace"
-                  name="name"
-                  placeholder="Name"
-                  required
-                />
-                <input
-                  type="email"
-                  class="inputspace"
-                  name="email"
-                  placeholder="Email"
-                  required
-                />
+                <input type="text" class="inputspace" name="name" placeholder="Your Name" required />
+                <input type="email" class="inputspace" name="email" placeholder="Your Email" required />
               </div>
               <div class="textspace">
                 <textarea
-                  placeholder="Message"
                   name="textarea"
-                  id=""
+                  placeholder="Your Message"
                   required
                 ></textarea>
               </div>
@@ -382,6 +373,8 @@
                 </button>
               </div>
             </form>
+          </div>
+          
           </div>
         </div>
       </section>
